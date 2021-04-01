@@ -1,0 +1,65 @@
+{
+  "name": "ts-app-setup",
+  "version": "1.0.0",
+  "description": "poc of a front-end boilerplate",
+  "main": "index.ts",
+  "author": "Richardo Valente",
+  "license": "ISC",
+  "scripts": {
+    "prepare": "./scripts/set-git-hooks.sh",
+    "test": "jest",
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "jest --findRelatedTests --bail"
+    ],
+    "src/**/*.{css,scss}": [
+      "stylelint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@snowpack/app-scripts-react": "^2.0.1",
+    "@snowpack/plugin-postcss": "^1.2.1",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "commitizen": "^4.2.3",
+    "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "snowpack": "^3.1.2",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.19.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 50px;
+  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  margin: 0;
+}
+
+.app-gallery {
+  display: flex;
+  flex-flow: wrap;
+  margin: 0 -24px;
+}

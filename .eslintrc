@@ -2,15 +2,16 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
-    "sourceType": "module", // Allows for the use of imports
+    "ecmaVersion": 2020,
+    "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true // Allows for the parsing of JSX
-    }
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
   },
   "settings": {
     "react": {
-      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+      "version": "detect"
     }
   },
   "plugins": ["@typescript-eslint", "prettier"],
@@ -21,9 +22,59 @@
     "prettier"
   ],
   "rules": {
-    "no-console": 1,
-    "prettier/prettier": 2,
+    "prettier/prettier": "error",
+    "no-console": "error",
     "default-case": "error",
-    "no-empty-function": "error"
+    "no-empty-function": "error",
+    "default-case-last": "warn",
+    "block-spacing": "warn",
+    "brace-style": "warn",
+    "multiline-comment-style": "warn",
+    "padding-line-between-statements": [
+      "warn",
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      },
+      { "blankLine": "always", "prev": "directive", "next": "*" },
+      { "blankLine": "any", "prev": "directive", "next": "directive" },
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "default",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can", "did", "will"]
+      },
+      {
+        "selector": "variable",
+        "types": ["string"],
+        "modifiers": ["const"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        "selector": "variable",
+        "types": ["function"],
+        "modifiers": ["const"],
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": ["property", "parameter", "parameterProperty"],
+        "format": ["snake_case", "camelCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      }
+    ]
   }
 }
